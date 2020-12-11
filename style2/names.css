@@ -1,0 +1,153 @@
+body{
+    background-color: rgb(34, 34, 34);
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+
+.main-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px auto auto;
+    grid-gap: 20px;
+}
+
+
+/* ----------- NAVBAR ---------------*/
+
+
+nav{
+    background-color:rgb(32, 80, 9);
+
+    /*border-bottom: 2px solid rgb(42, 100, 15);*/
+    display: grid;
+    grid-template-rows: minmax(min-content,60px) min-content;
+
+}
+nav .content{
+    display: grid;
+    place-items:center;
+    grid-auto-rows: 60px;
+    grid-auto-flow: column;
+    align-content: space-evenly;
+    
+
+}
+
+.links a , h2 , i {
+    color:white;
+}
+
+i:hover{
+    filter: opacity(50%);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+
+}
+.links a:hover{
+    transition: 0.6s;
+
+}
+.links{
+    display: grid;
+    grid-gap: 15px;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(min-content,60px);
+    place-items: center;
+}
+
+
+
+
+/*============================================================*/
+
+.content2{
+    display:grid;
+    place-items: center;
+}
+.sub-content{
+    background-image: url(field.jpg);
+    background-size: cover;
+    display:grid;
+    grid-auto-columns: 360px;
+    grid-auto-rows: 77px;
+    grid-gap:10px;
+    box-shadow: 0px 0px 10px 2px grey;
+}
+
+.att div , .mid-a div , .mid-d div , .def div , .gk div,.mid-m div,.mid-cf div {
+    
+}
+.sub-content div input {
+    font-size: 18px;
+    width: 70px;
+    height: 30px;
+}
+
+
+.att, .mid-a , .mid-d , .def , .gk , .mid-m , .mid-cf{
+    display: grid;
+    place-items: center;
+    grid-auto-flow: column;
+
+    
+
+    
+}
+.content3{
+    display:grid;
+    place-items: center;
+    margin-bottom: 20px;
+}
+.sub-content3{
+    display: grid;
+    grid-gap: 10px;
+}
+.sub-content3{
+    font-size: 22px;
+}
+button{
+    border:none;
+    background-color: black;
+    color:white;
+    box-shadow: 0px 0px 10px 2px rgb(32, 80, 9);
+    text-align: center;
+    width:200px;
+    height: 60px;
+}
+input{
+    box-shadow: 0px 0px 10px 2px rgb(32, 80, 9);
+    text-align: center;
+    width:200px;
+    height: 60px;
+    border:none;
+
+}
+button:hover{
+    background-color: rgb(24, 24, 24);
+    outline:none;
+}
+
+
+
+
+
+
+@media only screen and (max-width:760px) and (min-width:0px){
+    body{
+        font-size: 15;
+    }
+
+    .sub-content{
+        grid-auto-columns: 360px;
+    }
+    
+
+
+}

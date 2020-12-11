@@ -1,0 +1,362 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'saved.css' %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <title>Menu</title>
+</head>
+<script>
+</script>
+<body>
+    <div class="main-container">
+        <nav>
+            <div class="content">
+                <h2>LOGO</h2>
+                <a href="{% url 'home' %}"><i class="fa fa-home" style="font-size:24px"></i></a>
+        </nav>
+
+
+        <div class="content2" >
+            <div class="sub-content">
+                <div class="att">
+                    {% for i in l.0%}
+                    <div id="p{{i.1}}"><h4 class="hold{{i.1}}" style="position: absolute;">{{i.0}}</h4></div>
+                    {% endfor %}
+                </div>
+                <div class="mid-a">
+                    {% for i in l.1%}
+                    <div id="p{{i.1}}"><h4 class="hold{{i.1}}" style="position: absolute;">{{i.0}}</h4></div>
+                    {% endfor %}
+
+                </div>
+                <div class="mid-m">
+                    {% for i in l.2%}
+                    <div id="p{{i.1}}"><h4 class="hold{{i.1}}" style="position: absolute;">{{i.0}}</h4></div>
+                    {% endfor %}
+                    <!--<div id=p6><h4 class="hold2" style="position: absolute;">coman</h4></div>
+                    <div id="p11"><h4 class="hold3" style="position: absolute;">muller</h4></div>
+                    <div id="p8"><h4 class="hold4" style="position: absolute;">gnabry</h4></div>-->
+                
+                </div>
+                <div class="mid-d">
+                    {% for i in l.3%}
+                    <div id="p{{i.1}}"><h4 class="hold{{i.1}}" style="position: absolute;">{{i.0}}</h4></div>
+                    {% endfor %}
+                    
+                </div>
+                <div class="def">
+                    {% for i in l.4%}
+                    <div id="p{{i.1}}"><h4 class="hold{{i.1}}" style="position: absolute;">{{i.0}}</h4></div>
+                    {% endfor %}
+                    
+                </div>
+                <div class="gk">
+                    {% for i in l.5%}
+                    <div id="p{{i.1}}"><h4 class="hold{{i.1}}" style="position: absolute;">{{i.0}}</h4></div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="content3">
+            <div class="sub-content3">
+                <!--<div><input type="text" placeholder="Squad name" id="sname"></div>-->
+                <div><button type="submit" id="delete-b"  data-action="delete"> Delete </button></div>
+                <!--<div><button type="submit" id="re-b" data-test="test"  data-action="rearrange"> Rearrange </button></div>-->
+            </div>
+             
+        </div>
+        
+        
+    </div>
+    
+</body>
+</html>
+
+<script>
+    var dropdown = document.querySelector("nav .dropdown");
+    var button = document.querySelector("nav .menu");
+
+    function menu()
+    {
+        if (dropdown.style.display === "grid") 
+            {  
+                dropdown.style.display = "none";
+            } 
+        else 
+            {    
+                dropdown.style.display = "grid";
+            }
+    }
+
+
+</script>
+
+<script>
+    a=document.getElementById('p1')
+        b=document.getElementById('p2')
+        c=document.getElementById('p3')
+        d=document.getElementById('p4')
+        e=document.getElementById('p5')
+        f = document.getElementById('p6')
+        g = document.getElementById('p7')
+        h = document.getElementById('p8')
+        i = document.getElementById('p9')
+        j = document.getElementById('p10')
+        k = document.getElementById('p11')
+        sname = document.getElementById('sname')
+
+    a.style.transform="{{c.0}}",b.style.transform="{{c.1}}",c.style.transform="{{c.2}}"
+    d.style.transform="{{c.3}}",e.style.transform="{{c.4}}",f.style.transform="{{c.5}}"
+    g.style.transform="{{c.6}}",h.style.transform="{{c.7}}",i.style.transform="{{c.8}}"
+    j.style.transform="{{c.9}}",k.style.transform="{{c.10}}"
+
+
+
+
+    /*---------------------------------------------------------------------------*/
+
+
+    /*var active = false;
+    var currentX;
+    var currentY;
+    var initialX;
+    var initialY;
+    var xOffset = 0;
+    var yOffset = 0;
+
+
+    var container = document.querySelector(".mid-a");
+    if(container){
+    var activeItem = null;
+    container.addEventListener("touchstart", dragStart, false);container.addEventListener("touchend", dragEnd, false);
+    container.addEventListener("touchmove", drag, false);
+    container.addEventListener("mousedown", dragStart, false);container.addEventListener("mouseup", dragEnd, false);
+    container.addEventListener("mousemove", drag, false);}
+
+    var container2 = document.querySelector(".def");
+    if(container2){
+    var activeItem = null;
+    container2.addEventListener("touchstart", dragStart, false);container2.addEventListener("touchend", dragEnd, false);
+    container2.addEventListener("touchmove", drag, false);
+    container2.addEventListener("mousedown", dragStart, false);container2.addEventListener("mouseup", dragEnd, false);
+    container2.addEventListener("mousemove", drag, false);}
+
+    var container3 = document.querySelector(".mid-d");
+    if(container3){
+    var activeItem = null;
+    container3.addEventListener("touchstart", dragStart, false);container3.addEventListener("touchend", dragEnd, false);
+    container3.addEventListener("touchmove", drag, false);
+    container3.addEventListener("mousedown", dragStart, false);container3.addEventListener("mouseup", dragEnd, false);
+    container3.addEventListener("mousemove", drag, false);}
+
+    var container4 = document.querySelector(".att");
+    if(container4){
+    var activeItem = null;
+    container4.addEventListener("touchstart", dragStart, false);container4.addEventListener("touchend", dragEnd, false);
+    container4.addEventListener("touchmove", drag, false);
+    container4.addEventListener("mousedown", dragStart, false);container4.addEventListener("mouseup", dragEnd, false);
+    container4.addEventListener("mousemove", drag, false);}
+
+    var container5 = document.querySelector(".gk");
+    if(container5){
+    var activeItem = null;
+    container5.addEventListener("touchstart", dragStart, false);container5.addEventListener("touchend", dragEnd, false);
+    container5.addEventListener("touchmove", drag, false);
+    container5.addEventListener("mousedown", dragStart, false);container5.addEventListener("mouseup", dragEnd, false);
+    container5.addEventListener("mousemove", drag, false);}
+
+    var container7 = document.querySelector(".mid-m");
+    if(container7){
+    var activeItem = null;
+    container7.addEventListener("touchstart", dragStart, false);container7.addEventListener("touchend", dragEnd, false);
+    container7.addEventListener("touchmove", drag, false);
+    container7.addEventListener("mousedown", dragStart, false);container7.addEventListener("mouseup", dragEnd, false);
+    container7.addEventListener("mousemove", drag, false);}
+    var hold = []
+    var hold2
+    var not_allowed = [document.querySelector(".hold1"),document.querySelector(".hold2")]
+    var check=true
+    function dragStart(e) {
+      if(e.target!=document.querySelector(".hold1")&e.target!=document.querySelector(".hold2")&e.target!=document.querySelector(".hold3")&e.target!=document.querySelector(".hold4")&e.target!=document.querySelector(".hold5")&e.target!=document.querySelector(".hold6")&e.target!=document.querySelector(".hold7")&e.target!=document.querySelector(".hold8")&e.target!=document.querySelector(".hold9")&e.target!=document.querySelector(".hold10")&e.target!=document.querySelector(".hold11")){  
+
+      if (e.target !== e.currentTarget) {
+        active = true;
+
+        // this is the item we are interacting with
+        activeItem = e.target;
+
+        if (activeItem !== null) {
+          if (!activeItem.xOffset) {
+            activeItem.xOffset = 0;
+          }
+
+          if (!activeItem.yOffset) {
+            activeItem.yOffset = 0;
+          }
+            if (e.type === "touchstart") {
+                activeItem.initialX = e.touches[0].clientX - activeItem.xOffset;
+                activeItem.initialY = e.touches[0].clientY - activeItem.yOffset;
+                if (activeItem.xOffset==0){
+                    hold.push([e.touches[0].clientX - activeItem.xOffset,e.touches[0].clientY - activeItem.yOffset
+                    ,activeItem.id])
+                }
+            } else {
+                if (activeItem.xOffset==0){
+                    hold.push([e.clientX - activeItem.xOffset,e.clientY - activeItem.yOffset,activeItem.id])
+                }
+                activeItem.initialX = e.clientX - activeItem.xOffset;
+                activeItem.initialY = e.clientY - activeItem.yOffset;
+            }
+        
+            }
+        }
+        }
+      
+    }
+
+    function dragEnd(e) {
+        if (activeItem !== null) {
+                activeItem.initialX = activeItem.currentX;
+                activeItem.initialY = activeItem.currentY;
+        }
+
+        active = false;
+        activeItem = null;
+    }
+
+    function drag(e) {
+      if (active) {
+        e.preventDefault();
+        if (e.type === "touchmove") {
+
+          activeItem.currentX = e.touches[0].clientX - activeItem.initialX;
+          activeItem.currentY = e.touches[0].clientY - activeItem.initialY;
+          inix = activeItem.initialX
+        } else {
+          activeItem.currentX = e.clientX - activeItem.initialX;
+          activeItem.currentY = e.clientY - activeItem.initialY;
+        }
+
+        activeItem.xOffset = activeItem.currentX;
+        activeItem.yOffset = activeItem.currentY;
+        //console.log(e.touches[0].clientX,activeItem.currentX,activeItem.initialX,hold)
+        for (i=0;i<hold.length;i++){
+            if (activeItem.id == hold[i][2]){
+                hold2 = hold[i][0]
+                hold3=hold[i][1]
+                break
+            }
+
+        }
+
+        if (activeItem.currentX>(screen.width/2 +180)-hold2){
+            activeItem.currentX=(screen.width/2 +180)-(hold2)
+        }
+        if (activeItem.currentX<(screen.width/2 -180)-hold2){
+            activeItem.currentX=(screen.width/2 -180)-(hold2)
+        }
+        if (activeItem.currentY>(592)-hold3){
+            activeItem.currentY=(592)-(hold3)
+        }
+        if (activeItem.currentY<(80)-hold3){
+            activeItem.currentY=(80)-(hold3)
+        }
+        setTranslate(activeItem.currentX, activeItem.currentY, activeItem);
+    }
+    }
+
+    function setTranslate(xPos, yPos, el) {
+      el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+    }*/
+    
+    
+</script>
+
+
+<script>
+
+
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    btn = document.getElementById('delete-b')
+    var csrftoken = getCookie('csrftoken');
+
+    btn.addEventListener("click",function(){
+        delete_("{{us.name}}")
+    })
+    var csrftoken = getCookie('csrftoken');
+    /*btn.addEventListener("click",function(){
+        rearrange()
+    })
+    function rearrange(){
+        var url = 
+        '/rearrange/'
+        fetch(url, {
+			method:'POST',
+			headers:{
+				'Content-Type':'application/json',
+				'X-CSRFToken':csrftoken,
+			}, 
+            body:JSON.stringify()
+        })
+        
+		.then((response) => {
+		   return response.json();
+		})
+		.then((data) => {
+            console.log("data :",data)
+            location.reload()
+		});
+    }*/
+
+
+
+    /*-----------------------------------------------------------------------*/
+
+
+
+    function delete_(sname){
+        console.log("sending data to user's savelist")
+        var url = 
+        '/delete/'
+
+		fetch(url, {
+			method:'POST',
+			headers:{
+				'Content-Type':'application/json',
+				'X-CSRFToken':csrftoken,
+			}, 
+            body:JSON.stringify({"sname":sname})
+        })
+        
+		.then((response) => {
+		   return response.json();
+		})
+		.then((data) => {
+            console.log("data :",data)
+            location.href="https://m-squads12.herokuapp.com//savelist"
+		});
+    }
+
+    
+
+</script>

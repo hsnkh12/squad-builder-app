@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'menu.css' %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <title>Menu</title>
+</head>
+<body>
+    <div class="main-container">
+        <nav>
+            <div class="content">
+                <h2>LOGO</h2>
+                <div class="links">
+                    <a href="{% url 'home' %}">Home</a>
+                    {% if Li %}
+                    <a href="{% url 'login' %}">Login</a>
+                    <a href="{% url 'register' %}">Register</a>
+                    {% else %}
+                    <a href="{% url 'logout' %}">Logout</a>
+                    
+                    {% endif %}
+                    <a href="{% url 'savelist' %}">Savelist</a>
+                    <a href="">{{request.user.username}}</a>
+                </div>
+                <i class="material-icons" onclick=menu()>menu</i>
+            </div>
+            <div class="dropdown">
+                <a href="{% url 'home' %}">Home</a>
+                {% if Li %}
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'register' %}">Register</a>
+                {% else %}
+                <a href="{% url 'logout' %}">Logout</a>
+                
+                {% endif %}
+                <a href="{% url 'savelist' %}">Savelist</a>
+            </div>
+        </nav>
+        
+        <div class="section1">
+            <div class="test">
+                <div class="sub-section1" onclick=squads()>
+                    <div class="content2">
+                        <p>Creat your own squad</p>
+                    </div>
+                </div>
+            </div>
+            <div class="test2">
+                <div class="dropdown2">
+                    <div class="sub-d2">
+                        {% for i in f %}
+                        <div><a href="{% url 'creat_squad' i.name %}">{{i.name}}</a></div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <!--<div class="test3">
+                <div class="sub-section1" onclick=squads()>
+                    <div class="content2">
+                        <p>Creat your own squad</p>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    var dropdown = document.querySelector("nav .dropdown");
+    var button = document.querySelector("nav .menu");
+
+    function menu()
+    {
+        if (dropdown.style.display === "grid") 
+            {
+                dropdown.style.display = "none";
+            } 
+        else 
+            {
+                dropdown.style.display = "grid";
+            }
+    }
+
+    var dropdown2 = document.querySelector(".test2 .dropdown2");
+    var button2 = document.querySelector(".test .sub-section1");
+    function squads()
+    {
+        if (dropdown2.style.display === "grid") 
+            {
+                dropdown2.style.display = "none";
+            } 
+        else 
+            {
+                dropdown2.style.display = "grid";
+            }
+    }
+
+</script>

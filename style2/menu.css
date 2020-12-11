@@ -1,0 +1,189 @@
+body{
+    background-color: rgb(34, 34, 34);
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+a{
+    font-size: 18px;
+
+}
+
+.main-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px auto;
+    grid-gap: 20px;
+}
+
+
+/* ----------- NAVBAR ---------------*/
+
+
+nav{
+    background-color:rgb(32, 80, 9);
+
+    /*border-bottom: 2px solid rgb(42, 100, 15);*/
+    display: grid;
+    grid-template-rows: minmax(min-content,60px) min-content;
+
+}
+nav .content{
+    display: grid;
+    place-items:center;
+    grid-auto-rows: 60px;
+    grid-auto-flow: column;
+    align-content: space-evenly;
+    
+
+}
+
+.links a , h2 , i {
+    color:white;
+}
+.content i{
+    display:none;
+
+}
+i:hover{
+    filter: opacity(50%);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+
+}
+.links a:hover{
+    transition: 0.6s;
+
+}
+.links{
+    display: grid;
+    grid-gap: 15px;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(min-content,60px);
+    place-items: center;
+}
+
+.dropdown{
+    display: none;
+    position: relative;
+    background-color:rgb(32, 80, 9);
+    text-align: initial;
+}
+.dropdown a{
+    color: white;
+    padding: 20px;
+}
+.dropdown a:hover{
+    background-color:rgb(41, 104, 11);
+}
+
+
+
+
+
+.section1{
+    display: grid;
+    place-items: center;
+    grid-gap: 10px;
+}
+.test{
+    display: grid;
+}
+.test3{
+    display: grid;
+}
+.test2{
+    display: grid;
+    grid-template-columns: auto;
+}
+.sub-section1{
+    display: grid;
+    grid-auto-columns: 250px;
+    grid-auto-rows: 75px;
+    border:none;
+}
+.sub-section1:hover{
+    filter: opacity(50%);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+p{
+    font-size: 20px;
+    color:white;
+}
+
+.content2{
+    border-radius: 10px;
+    background-color: rgb(17, 17, 17);
+    display: grid;
+    place-items: center;
+
+}
+.dropdown2{
+    border-radius: 10px;
+    display: none;
+    background-color: rgb(17, 17, 17);
+    place-items: center;
+}
+.sub-d2{
+    margin:15px;
+    display: grid;
+    grid-template-columns: repeat(3,150px);
+    grid-auto-rows: 60px;
+    grid-gap: 20px;
+
+}
+.sub-d2 div{
+    border-radius: 100px;
+    background-color:black;
+    box-shadow: 0px 0px 4px 2px rgb(32, 80, 9);
+
+}
+.sub-d2 div a{
+    display:block;
+    color:rgb(187, 187, 187);
+    text-align: center;
+    margin: 15px;
+
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width:760px) and (min-width:0px){
+    body{
+        font-size: 15;
+    }
+    .content i{
+        display: initial;
+    }
+    .links{
+        display: none;
+    }
+    .test2{
+        grid-template-columns: 350px;
+    }
+    
+.sub-d2 div a{
+    margin: 10px;
+
+}
+    .sub-d2{
+        grid-template-columns: repeat(2,120px);
+        grid-auto-rows: 50px;}
+    
+
+
+}
+

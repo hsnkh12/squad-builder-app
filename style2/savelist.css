@@ -1,0 +1,138 @@
+body{
+    background-color: rgb(34, 34, 34);
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+a{
+    font-size: 18px;
+
+}
+
+.main-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px auto;
+    grid-gap: 20px;
+}
+
+
+/* ----------- NAVBAR ---------------*/
+
+
+nav{
+    background-color:rgb(32, 80, 9);
+
+    /*border-bottom: 2px solid rgb(42, 100, 15);*/
+    display: grid;
+    grid-template-rows: minmax(min-content,60px) min-content;
+
+}
+nav .content{
+    display: grid;
+    place-items:center;
+    grid-auto-rows: 60px;
+    grid-auto-flow: column;
+    align-content: space-evenly;
+    
+
+}
+
+.links a , h2 , i {
+    color:white;
+}
+.content i{
+    display:none;
+
+}
+i:hover{
+    filter: opacity(50%);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+
+}
+.links a:hover{
+    transition: 0.6s;
+
+}
+.links{
+    display: grid;
+    grid-gap: 15px;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(min-content,60px);
+    place-items: center;
+}
+
+.dropdown{
+    display: none;
+    position: relative;
+    background-color:rgb(32, 80, 9);
+    text-align: initial;
+}
+.dropdown a{
+    color: white;
+    padding: 20px;
+}
+.dropdown a:hover{
+    background-color:rgb(41, 104, 11);
+}
+
+.content2{
+    display: grid;
+    place-items: center;
+}
+.sub-content2{    
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 350px;
+    grid-auto-rows: 70px;
+    grid-gap: 3px;
+
+}
+.sub-content2 div{
+    border-radius: 7px;
+    background-color: black;
+}
+.sub-sub-container2{
+    display: grid;
+    
+    grid-template-columns: 150px 100px 100px;
+    color:white;
+    place-items: center;
+}
+.sub-sub-container2 a{
+    display:block;
+
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width:760px) and (min-width:0px){
+    body{
+        font-size: 15;
+    }
+    .content i{
+        display: initial;
+    }
+    .links{
+        display: none;
+    }
+    .test2{
+        grid-template-columns: 350px;
+    }
+    
+    
+
+
+}
