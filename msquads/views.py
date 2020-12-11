@@ -196,6 +196,8 @@ def delete(request):
 
 @csrf_exempt
 def save(request):
+        t = temp.objects.get(user=request.user)
+        form = t.form
         data = json.loads(request.body)
         saved_squad.objects.create(p1=data["t1"],p2=data["t2"],p3=data["t3"],p4=data["t4"],
         p5=data["t5"],p6=data["t6"],p7=data["t7"],p8=data["t8"],p9=data["t9"],
